@@ -12,7 +12,7 @@ public class Execute01 {
         //2-ADIM: Database'e bağlanma
         Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/jdbc_db","techpro","password");
 
-        //3-ADIM: Statement oluşturma: SQL sotgularını oluşturma, Database'e göndermek ve çalıştırmak için oluşturulur.
+        //3-ADIM: Statement oluşturma: SQL sorgularını oluşturma, Database'e göndermek ve çalıştırmak için oluşturulur.
         Statement st = connection.createStatement();
 
         System.out.println("Connection is success");
