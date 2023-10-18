@@ -61,12 +61,17 @@ public class PreparedStatement01 {
 
         System.out.println("-------------ÖDEVV---------------");
         //1-Bölüm isimlerini, kampüslerini ve her bir bölümde okuyan öğrencilerin en yüksek puanlarını listeleyiniz.
+            ResultSet soru1= st.executeQuery("SELECT b.bolum,b.kampus,MAX(o.puan) AS en_yuksek_puan FROM bolumler AS b LEFT JOIN ogrenciler AS o ON b.bolum=o.bolum GROUP BY b.bolum,b.kampus");
+            while (soru1.next()) {
+                System.out.println(soru1.getString("bolum") + "--" + soru1.getString("kampus") + "--" + soru1.getInt("en_yuksek_puan"));
+            }
 
+        System.out.println("-------------------------------------------------");
 
         //2-it_persons tablosundan prog_lang css olanları siliniz.
         int deleted5 = st.executeUpdate("DELETE FROM it_persons WHERE prog_lang='Css'");
         System.out.println("Silinenler: " + deleted5);
-
+        System.out.println("--------------------------------------------------");
         //3-it_persons tablosundan prog_lang java olanları siliniz.
         String java1 =("DELETE FROM it_persons WHERE prog_lang='Java'");
         int result7= st.executeUpdate(java1);
