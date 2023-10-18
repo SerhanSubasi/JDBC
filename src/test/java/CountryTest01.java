@@ -18,14 +18,13 @@ public class CountryTest01 {
       Kullanıcı, Bağlantıyı kapatır
     */
 
-    @Test
-    public void countryTest() throws SQLException {
+        @Test
+        public void countryTest() throws SQLException {
         // Kullanıcı veritabanına bağlanır
         Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/jdbc_db", "techpro", "password");
-
-        // Kullanıcı, 'countries' tablosundan ülke adlarını almak üzere sorgu gönderir
         Statement st = con.createStatement();
 
+        // Kullanıcı, 'countries' tablosundan ülke adlarını almak üzere sorgu gönderir
         String sql = "SELECT country_name FROM countries";
         ResultSet resultSet = st.executeQuery(sql);
 
